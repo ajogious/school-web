@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <script src="js/all.min.js"></script>
+  <title>BISchool | Home</title>
+</head>
+<body>
+<!-- header and navigtion -->
+  <header>
+    <div class="flex container">
+      <h1>B<span id="sp">I</span>S</h1>
+      <nav>
+        <ul>
+          <li><a href="Index.html">Home</a></li>
+          <li><a href="classes.html">Classes</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="login">
+        <a href="#sign-up"><button>Sign-up</button></a>
+        <a href="#sign-in"><button class="hide">Sign-in</button></a>
+      </div>
+    </div>
+    <div class="showcase">
+      <div class="showcase-main">
+        <h1>WELCOME TO BINTALYA INTERNATIONAL <br> SCHOOL</h1>
+        <p>"enroll your children now and make them the best ambassedor of this great nation"</p>
+      </div>
+      <div class="showcase-form">
+        <form id="sign-in">
+          <h4>Staff/Student Sign-In</h4>
+          <br>
+          <label for="">Username</label><br>
+          <input type="text" placeholder="Enter Username..."><br>
+          <label for="">Password</label><br>
+          <input type="password" placeholder="Enter Password..."><br>
+          <button type="submit">Login</button><button type="submit">Forgot Password</button>
+        </form>
+      </div>
+      <div class="about">
+        <p>BIS will give you all what your children need.</p>
+      </div>
+    </div>
+  </header>
+  <!-- end of header and navigation -->
+
+  <!-- facilities -->
+
+  <section class="facilities">
+    <h1>Our Facilities:</h1>
+    <br><br>
+    <div class="grid container">
+      <div class="facilities-grid">
+        <img src="images/classroom.jpg">
+        <h3>Classroom</h3>
+      </div>
+      <div class="facilities-grid">
+        <img src="images/libraray.jpg">
+        <h3>Library</h3>
+      </div>
+      <div class="facilities-grid">
+        <img src="images/science-lab.jpg">
+        <h3>Science Laboratory</h3>
+      </div>
+      <div class="facilities-grid">
+        <img src="images/comp-lab.jpg">
+        <h3>Computer Laboratory</h3>
+      </div>
+      <div class="facilities-grid">
+        <img src="images/bb-court.jpg">
+        <h3>Basket Ball Court</h3>
+      </div> 
+    </div>
+  </section>
+  <!-- forms -->
+  <section class="forms">
+    <div class="container">
+      <form id="sign-up">
+        <h1>Sign-Up</h1>
+        <hr>
+        <br>
+        <label for="">Full Name:</label><br>
+        <input type="text" placeholder="SURNAME, FIRST NAME, OTHER NAME" required><br>
+        <label for="">Username:</label><br>
+        <input type="text" placeholder="Enter a Username..." required><br>
+        <label for="">Password</label><br>
+        <input type="password" placeholder="Enter Password" required><br>
+        <label>Confirm Password</label><br>
+        <input type="password" placeholder="Enter Password" required>
+        </label><br>
+        <input type="radio" name="gender" value="male" required> Male
+        <input type="radio" name="gender" value="female" required> Female<br>
+        <label for="">Date of Birth:</label>
+        <input type="date"><br>
+        <input type="radio" name="teacher" value="teacher" required> Teacher
+        <input type="radio" name="teacher" value="student" required> Student<br>
+        <input type="checkbox" required> <span id="sp2">I will abide to all the rules <br> of this noble school</span><br>
+        <button type="submit">Sign-Up</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- end of forms -->
+
+  <!-- footer -->
+  <footer id="contact">
+    <h3><i>Contact Us:</i></h3>
+    <br>
+    <a href=""><i class="fab fa-facebook fa-2x"></i></a>
+    <a href=""><i class="fab fa-twitter fa-2x"></i></a>
+    <a href=""><i class="fab fa-instagram fa-2x"></i></a>
+    <div class="newsletter">
+      <h3>Subscribe For Our News letter:</h3>
+      <input type="email" placeholder="Enter Email...">
+    </div>
+    <br>
+    <p>Copyright &copy;, 2021</p>
+    <br>
+    <h3><em>Design by AjTech Institute</em></h3>
+  </footer>
+</body>
+</html>

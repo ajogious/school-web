@@ -1,0 +1,500 @@
+/* ------- variable --------*/
+:root{
+  --primary-color: #fff;
+  --secondary-color: #05104f;
+  --bg-color: #dfeef0;
+  --tertiary-color: rgba(84, 69, 69, 0.6);
+  --tertiary--color: rgba(0,0,0,0.7);
+  --dark: #313131;
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/*------------- body -------------------------*/
+body{
+  background-color: var(--bg-color);
+  line-height: 1.5;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/* @media (max-width: 668px){
+  body{
+    background-color: var(--dark);
+    line-height: 1.5;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+} */
+/*---------- end of body --------------------*/
+
+/*------------ header and navigation -------*/
+header{
+  background-image: linear-gradient(var(--tertiary--color), var(--tertiary-color)),
+  url(../images/pupils.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+}
+header::before, header::after{
+  content: "";
+  height: 70px;
+  position: absolute;
+  bottom: -70px;
+  right: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  transform: skewY(3deg);
+}
+header .flex{
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .flex h1{
+  color: var(--secondary-color);
+  font-size: 2.5rem;
+  background-color: var(--tertiary-color);
+  background-color: 50px;
+  border-radius: 25px;
+}
+header .flex #sp{
+  color: var(--primary-color);
+}
+header .container nav{
+  padding: 10px;
+}
+nav li{
+  list-style: none;
+  display: inline-block;
+  padding-left: 15px;
+}
+nav li a, .login button a{
+  text-decoration: none;
+  color: var(--primary-color);
+  text-shadow: 0 3px 2px var(--secondary-color);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+nav li::after{
+  content: "";
+  width: 0;
+  margin: auto;
+  height: 5px;
+  display: block;
+  background-color: var(--secondary-color);
+  transition: 0.9s;
+}
+nav ul li:hover::after{
+  width: 100%;
+}
+.login button{
+  background-color: var(--secondary-color);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+.login .hide{
+  display: none;
+}
+@media (max-width: 668px){
+  header .flex{
+    flex-direction: column;
+    align-items: center;
+  }
+  .login button{
+    margin-top: 10px;
+  }
+  header::before, header::after{
+    content: "";
+    height: 0px;
+  }
+  header .flex h1{
+    color: var(--secondary-color);
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  header .container nav{
+    background-color: transparent;
+    padding: 7px;
+    border-radius: 15px 20px;
+  }
+  .login .hide{
+    display: inline-block;
+  }
+}
+/* end of header and navigation */
+
+/* showcase */
+.showcase{
+  text-align: center;
+  margin-top: 110px;
+  color: var(--secondary-color);
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-template-rows: 2fr 2fr;
+  align-items: center;
+  grid-template-areas: 
+  "showcase form"
+  "showcase about";
+}
+.showcase p{
+  color: var(--primary-color);
+  text-shadow: 0 3px 2px var(--secondary-color);
+}
+.showcase-main{
+  grid-area: showcase;
+  text-shadow: 0 2px 2px var(--primary-color);
+  align-self: flex-start;
+}
+.showcase-form{
+  grid-area: form;
+  justify-self: center;
+}
+.showcase-form form h4{
+  text-shadow: 0 0 5px var(--primary-color);
+}
+.showcase-form form{
+  background-color: var(--tertiary-color);
+  padding: 40px;
+  border-radius: 20px;
+}
+.showcase-form label{
+  font-weight: bold;
+  color: var(--primary-color);
+  text-shadow: 0 3px 2px var(--secondary-color);
+}
+.showcase-form input{
+  width: 100%;
+  padding: 5px 10px;
+  margin-bottom: 3px;
+  border: none;
+  border-bottom: 2px solid var(--tertiary--color);
+  outline: none;
+  background-color: transparent;
+  color: var(--bg-color);
+}
+.showcase-form button{
+  width: 100%;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  color: var(--primary-color);
+  background-color: transparent;
+  border: 1px solid var(--secondary-color);
+  border-radius: 20px;
+}
+.about{
+  margin: 20px;
+  grid-area: about;
+  border: 2px dotted var(--secondary-color);
+  align-self: flex-start;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+
+/* media query */
+@media (max-width: 668px){
+  .showcase{
+    text-align: center;
+    margin-top: 50px;
+    color: var(--secondary-color);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 30px;
+    align-items: center;
+    grid-template-areas: 
+    "showcase"
+    "showcase"
+    "form"
+    "about";
+  }
+  .showcase .showcase-main h1{
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  .showcase .showcase-main p{
+    font-size: 14px;
+    margin-bottom: 120px;
+  }
+  .about p{
+    color: var(--dark);
+    grid-area: about;
+    text-shadow: 0 0 3px var(--tertiary-color);
+  }
+}
+/* end of showcase */
+
+/* facilities */
+
+.facilities{
+  text-align: center;
+  position: relative;
+  margin-top: 120px;
+}
+.facilities .grid{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.facilities .grid img{
+  width: 250px;
+  height: 200px;
+}
+.facilities-grid{
+  border-radius: 10px;
+  box-shadow: 0 0 2px var(--tertiary--color);
+  padding: 20px;
+  background-color: var(--tertiary-color);
+  margin: 10px;
+}
+/* media query */
+@media (max-width: 668px){
+  .facilities{
+    position: relative;
+    margin-top: 450px;
+  }
+  .facilities .grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    text-align: center;
+    grid-gap: 10px 0px;
+  }
+}
+/* forms */
+
+.forms{
+  margin: 120px 50px;
+  text-align: left;
+}
+.forms form{
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  width: 35%;
+  padding: 20px;
+  border-radius: 10px;
+}
+.forms form h1{
+  margin: 10px 0 10px 0;
+  text-align: center;
+}
+.forms form input[type="text"], .forms form input[type="password"], .forms form input[type="date"]{
+  width: 100%;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: transparent;
+  color: var(--primary-color);
+  outline: none;
+  border: none;
+  border-bottom: 2px dotted var(--tertiary--color);
+}
+.forms form input{
+  margin: 10px;
+}
+.forms form button{
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  margin: 5px 0 5px 0;
+  font-family: fantasy;
+  font-size: 1.2rem;
+  background-color: var(--tertiary-color);
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+/* media query */
+@media (max-width: 668px){
+  .forms form{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+  }
+}
+
+/*  end of forms */
+
+/* footer */
+footer{
+  margin: 100px 0 10px 0;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  text-align: center;
+  padding: 20px;
+}
+footer p, footer i, footer .newsletter, footer input{
+  margin-bottom: 10px;
+}
+footer a{
+  color: var(--primary-color);
+}
+.newsletter input{
+  width: 300px;
+  height: 30px;
+  padding: 0 3px;
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+  outline: none;
+}
+footer h3 em{
+  font-size: 13px;
+  text-shadow: 3px 3px 2px var(--tertiary--color);
+}
+
+/* end of footer */
+
+/* classes */
+
+.classes-showcase h1{
+  margin-top: 200px;
+  color: var(--primary-color);
+  text-align: center;
+  text-shadow: 3px 2px 5px var(--secondary-color);
+}
+section .grid1, section .grid2{
+  margin-top: 60px;
+}
+
+.accordion{
+  width: 80%;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0 30px;
+}
+.accordion .grid1{
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 20px;
+}
+.accordion .grid1 div h3{
+  margin-left: 0px;
+  color: darkblue;
+  background-color: darkgray;
+  padding: 10px;
+  box-shadow: 0 0 3px gray;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 5px;
+}
+.accordion .grid1 div ul li{
+  display: none;
+}
+.accordion .grid1 div ul li:last-child{
+  border-right: none;
+}
+.accordion .grid1 div a{
+  color: #1a1919;
+  text-decoration: none;
+  
+}
+.accordion .grid1 div a:hover{
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+.accordion .grid1 div ul{
+  list-style: none;
+  background-color: lightgray;
+  border-radius: 10px;
+  box-shadow: 0 0 3px darkgray;
+}
+.accordion .grid1 div:target li{
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  cursor: pointer;
+  border: 1px solid gray;
+  padding: 10px;
+  font-weight: bold;
+}
+.accordion .grid1 div:target li:last-child{
+  border-right: 1px solid gray;
+}
+.accordion .grid1 div:target li:hover{
+  color: crimson;
+  font-weight: bold;
+}
+
+/* grid1 for ss class */
+
+.accordion .grid2{
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 20px;
+}
+.accordion .grid2 div h3{
+  margin-left: 0px;
+  color: darkblue;
+  background-color: darkgray;
+  padding: 10px;
+  box-shadow: 0 0 3px gray;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 5px;
+}
+.accordion .grid2 div ul li{
+  display: none;
+}
+.accordion .grid2 div ul li:last-child{
+  border-right: none;
+}
+.accordion .grid2 div a{
+  color: #1a1919;
+  text-decoration: none;
+  
+}
+.accordion .grid2 div a:hover{
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+.accordion .grid2 div ul{
+  list-style: none;
+  background-color: lightgray;
+  border-radius: 10px;
+  box-shadow: 0 0 3px darkgray;
+}
+.accordion .grid2 div:target li{
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  cursor: pointer;
+  border: 1px solid gray;
+  padding: 10px;
+  font-weight: bold;
+}
+.accordion .grid2 div:target li:last-child{
+  border-right: 1px solid gray;
+}
+.accordion .grid2 div:target li:hover{
+  color: crimson;
+  font-weight: bold;
+}
+/* media query */
+@media (max-width: 668px){
+  .classes-showcase h1{
+    margin-top: 70px;
+    color: var(--primary-color);
+    text-align: center;
+    text-shadow: 3px 2px 5px var(--secondary-color);
+  }
+  section .grid1, section .grid2{
+    margin-top: 20px;
+  }
+  .accordion{
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    grid-gap: 20px 0;
+  }
+}
